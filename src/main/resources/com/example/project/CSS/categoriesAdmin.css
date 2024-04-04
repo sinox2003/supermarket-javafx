@@ -1,0 +1,362 @@
+@import "adminPage.css";
+
+
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  scroll pane in the first page /////////////////////////////*/
+
+.mfx-scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: -fx-thirdColor;
+    /*-fx-visibility: none;*/
+    /*-fx-content-display: none;*/
+    /*!*-fx-opacity: 0;*!*/
+
+
+}
+.mfx-scroll-pane .scroll-bar:vertical .track {
+    /*-fx-opacity: 0;*/
+    /*-fx-background-color:-fx-mainColor;  !* Replace with your color *!*/
+}
+.mfx-scroll-pane{
+    -fx-background-color: transparent;
+}
+
+    /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\   table-view     ///////////////////////////////*/
+
+.mfx-table-view {
+    /*-fx-background-radius: ;*/
+    /*-fx-cursor: hand;*/
+    -fx-border-width:0;
+    /*-fx-background-color: -fx-mainColor;*/
+
+}
+.mfx-table-view .columns-container  {
+    /*-fx-border-width: 0;*/
+    /*-fx-border-width: 0 0 1 0;*/
+    /*-fx-background-radius: 10 10 0 0;*/
+
+}
+
+.mfx-table-column {
+    -fx-border-width: 0;
+    /*-fx-text-fill: white;*/
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    /*-fx-text-fill: #ffffff;*/
+    -fx-font-family: "roboto";
+}
+.mfx-table-column:hover {
+    /*-fx-border-color: transparent gray  transparent transparent;*/
+    /*-fx-border-width:  1px ;*/
+}
+.mfx-table-view .mfx-font-icon{
+    /*-mfx-color: #ffffff;*/
+}
+
+.mfx-table-row{
+    /*-fx-background-color: #1b2131;*/
+
+
+
+    /*-fx-background-color:-fx-mainColor ;*/
+
+}
+.mfx-table-row:selected{
+
+    /*-fx-background-color: #94b0fa;*/
+}
+.mfx-table-row .mfx-ripple-generator {
+    /*-mfx-ripple-radius: 20;*/
+    /*-mfx-ripple-color: #ec9773;*/
+}
+.mfx-table-row-cell {
+    -fx-font-family: "Roboto Medium";
+    /*-fx-text-fill: #e4e4e4;*/
+    -fx-font-size: 14px;
+    /*-fx-font-weight: light;*/
+
+}
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\   delete and edit buttons in productsTable ////////////////////////////////////*/
+
+.edit-button-tableView{
+    -fx-background-color: #1f6b00;
+    -fx-max-height: 18;
+    -fx-max-width: 18;
+    -fx-min-height: 18;
+    -fx-cursor: hand;
+    -fx-min-width: 18;
+    -fx-shape:"M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z";
+}
+.delete-button-tableView{
+    -fx-background-color: #830000;
+    -fx-max-height: 20;
+    -fx-max-width: 15;
+    -fx-min-height: 20;
+    -fx-cursor: hand;
+    -fx-min-width: 15;
+    -fx-shape:"M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z";
+}
+
+.stockOut-button-tableView {
+    -fx-background-color: #000000;
+    -fx-max-height: 18;
+    -fx-max-width: 18;
+    -fx-min-height: 18;
+    -fx-cursor: hand;
+    -fx-min-width: 18;
+
+    -fx-shape: "M704 288h131.072a32 32 0 0 1 31.808 28.8L886.4 512h-64.384l-16-160H704v96a32 32 0 1 1-64 0v-96H384v96a32 32 0 0 1-64 0v-96H217.92l-51.2 512H512v64H131.328a32 32 0 0 1-31.808-35.2l57.6-576a32 32 0 0 1 31.808-28.8H320v-22.336C320 154.688 405.504 64 512 64s192 90.688 192 201.664v22.4zm-64 0v-22.336C640 189.248 582.272 128 512 128c-70.272 0-128 61.248-128 137.664v22.4h256zm201.408 476.16a32 32 0 1 1 45.248 45.184l-128 128a32 32 0 0 1-45.248 0l-128-128a32 32 0 1 1 45.248-45.248L704 837.504V608a32 32 0 1 1 64 0v229.504l73.408-73.408z";
+}
+
+
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  text fields  ///////////////////////////////////////*/
+.titles{
+
+    -fx-font-size: 31px;
+    -fx-text-fill: -fx-textColor;
+
+}
+.mfx-text-field  {
+    -fx-font-size:16px ;
+    -fx-font-weight: bold;
+    -fx-font-family:"Roboto";
+
+    -fx-border-width: 0 0 3px 0;
+    -px-padding:0 0 -8px 3px;
+    -fx-border-radius: 0;
+    -fx-text-fill: white;
+    -fx-background-color: -fx-secondColor;
+
+}
+.mfx-text-field  .mfx-font-icon{
+    -mfx-color: white;
+
+}
+
+.mfx-text-field:focus-within  {
+    -fx-border-color: white;
+}
+.mfx-text-field .floating-text ,.mfx-date-picker .floating-text{
+    -fx-background-color: transparent;
+
+    -fx-text-fill: #a9a9a9;
+
+}
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  date pickers  ///////////////////////////////////*/
+
+
+
+
+.mfx-date-picker .icon {
+    -mfx-color: white;
+}
+
+.mfx-date-picker .date-picker-popup .content {
+    -fx-background-color: -fx-thirdColor;
+    /*-fx-border-color: transparent;*/
+    -fx-border-width: 0;
+}
+
+.mfx-date-picker .date-picker-popup .left-arrow:disabled,
+.mfx-date-picker .date-picker-popup .right-arrow:disabled {
+    -fx-opacity: 0.8;
+}
+
+.mfx-date-picker .date-picker-popup .left-arrow .mfx-font-icon,
+.mfx-date-picker .date-picker-popup .right-arrow .mfx-font-icon {
+    -mfx-color: white;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo,
+.mfx-date-picker .date-picker-popup .years-combo {
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-background-color: white;
+    -fx-text-fill: -mfx-text-he;
+
+    -fx-padding: 4;
+    -fx-background-insets: 0;
+    -fx-font-family: "Visby Round CF Medium";
+}
+
+.mfx-date-picker .date-picker-popup .months-combo:focus-within,
+.mfx-date-picker .date-picker-popup .years-combo:focus-within {
+    -fx-text-fill: -fx-thirdColor;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo:focus-within .caret .mfx-font-icon,
+.mfx-date-picker .date-picker-popup .years-combo:focus-within .caret .mfx-font-icon {
+    -mfx-color: -fx-thirdColor;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow {
+    -track-color: derive(-fx-thirdColor, 100%);
+    -thumb-color: derive(-fx-thirdColor, 70%);
+    -thumb-hover-color: derive(-fx-thirdColor, 45%);
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell {
+    -fx-font-family: 'Visby Round CF Medium';
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected .label,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected .label {
+    -fx-text-fill: -fx-thirdColor;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:hover,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:hover,
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected {
+    -fx-background-color: derive(-fx-thirdColor, 130%);
+}
+
+.mfx-date-picker .date-picker-popup .week-day {
+    -fx-font-family: 'Visby Round CF Bold';
+    -fx-text-fill: white;
+}
+
+.mfx-date-picker .date-picker-popup .mfx-date-cell {
+    -fx-font-family: 'Visby Round CF Medium';
+    -fx-text-fill: white;
+}
+
+.mfx-date-picker .date-picker-popup .mfx-date-cell:extra {
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+.mfx-date-picker .date-picker-popup .mfx-date-cell:current {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-font-family: 'Visby Round CF Demi Bold';
+}
+
+.mfx-date-picker .date-picker-popup .mfx-date-cell:selected {
+    -fx-background-color: white;
+    -fx-font-family: 'Visby Round CF Bold';
+    -fx-text-fill: -fx-thirdColor;
+}
+
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  buttons  ///////////////////////////////////*/
+
+.mfx-button{
+    -fx-padding: 10px 13px 10px 13px;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+    -fx-background-radius: 10px;
+}
+.mfx-button .mfx-ripple-generator {
+    -mfx-ripple-radius: 0;
+
+}
+
+
+
+.add_buttons{
+
+    -fx-background-color: transparent;
+}
+
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ scroll pane in categories pane /////////////////////////////////*/
+
+#DBCategories_container .pane{
+    -fx-background-radius:0 30 0 30;
+    -fx-max-width: 246;
+    -fx-max-height: 334;
+    -fx-min-width: 246;
+    -fx-min-height: 334;
+
+}
+
+#DBCategories_container .pane  .mfx-button  {
+    -mfx-button-type: raised;
+
+    -mfx-depth-level:level5;
+
+}
+#DBCategories_container .pane .mfx-button .mfx-ripple-generator {
+    -mfx-ripple-radius: 0;
+    -mfx-ripple-color: transparent;
+}
+#DBCategories_container .pane  .showCategoryProducts_btn {
+
+    -fx-content-display: graphic_only;
+    -fx-cursor: hand;
+    -fx-background-color: white;
+
+    -fx-max-width: 41;
+    -fx-max-height: 41;
+    -fx-min-width: 41;
+    -fx-min-height: 41;
+    -fx-translate-x: 30;
+    -fx-translate-y: 265;
+    -fx-shape: "M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z M230.71 169.53c-3.72 2.06-6.04 6.04-6.04 10.24 V300c0 4.54 2.45 8.72 6.04 10.98s8.05 1.89 11.69-0.23l85.08-52.12c3.53-2.17 5.74-5.35 5.74-9.05s-2.21-6.88-5.74-9.05l-85.08-52.12c-3.64-2.12-8.05-2.21-11.69-0.23z ";
+}
+
+#DBCategories_container .pane  .showCategoryProducts_btn:hover {
+    -fx-background-color: rgba(238, 236, 236, 0.9);
+}
+
+
+#DBCategories_container .pane .label {
+    -fx-font-size: 24;
+
+    -fx-translate-x: 28;
+    -fx-max-width:190 ;
+    -fx-min-width:190 ;
+    -fx-max-height:100 ;
+    -fx-min-height:100 ;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-line-spacing: 5;
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+    -fx-fill: white;
+    -fx-font-weight: bolder ;
+    -fx-font-style: italic;
+    -fx-font-family:"roboto" ;
+}
+
+#DBCategories_container  .pane .edit-button,#DBCategories_container .pane .deleteCategory_btn{
+    -fx-font-size: 19;
+    -fx-font-weight: bold ;
+    -fx-effect: dropshadow(gaussian,rgba(211, 211, 211, 0.9),2, 1, 0, 4);
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+    -fx-min-height:50;
+    -fx-min-width: 220;
+}
+#DBCategories_container  .pane .edit-button{
+    -fx-background-radius: 30 30 0 30 ;
+}
+#DBCategories_container .pane .deleteCategory_btn{
+    -fx-translate-y: 70;
+    -fx-background-radius: 0 30 30 0 ;
+}
+
+#DBCategories_container .pane .edit-button:pressed {
+    -fx-effect: dropshadow(gaussian, rgba(211, 211, 211, 0.9),2, 1,0, 2);
+    -fx-translate-y: 2;
+}
+#DBCategories_container .pane .deleteCategory_btn:pressed {
+    -fx-effect: dropshadow(gaussian, rgba(211, 211, 211, 0.9),2, 1,0, 2);
+    -fx-translate-y: 72;
+}
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    refresh button ////////////////////////////////////*/
+.refresh_button{
+    /*-fx-padding: 10px 13px 10px 13px;*/
+    -fx-background-color: -fx-thirdColor;
+    /*-fx-font-size: 17px;*/
+    /*-fx-cursor: hand;*/
+    /*-fx-background-radius: ;*/
+}
+.refresh_button:hover{
+    -fx-background-color: -fx-labelColor;
+}
+

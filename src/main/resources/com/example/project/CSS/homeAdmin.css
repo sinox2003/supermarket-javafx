@@ -1,0 +1,93 @@
+@import "adminPage.css";
+
+.column-labels{
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "roboto";
+}
+
+.row-container{
+
+    -fx-background-color: -fx-mainColor;
+    -fx-padding: 0 0 0 0;
+    -fx-min-height: 45;
+
+    -fx-min-width: 1155;
+}
+.row-container:hover{
+-fx-background-color: #313062;
+
+
+}
+.row-container .label{
+    -fx-font-size: 14;
+    -fx-text-fill: #ffffff;
+
+    -fx-font-family: "roboto";
+}
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-underline: true  ;
+    -fx-wrap-text: true;
+    -fx-font-size: 14;
+    -fx-border-width: 0 ;
+
+    -fx-text-fill:  -fx-fourthColor;
+    -fx-font-family: "roboto";
+    -fx-cursor: hand;
+}
+.link-button:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.row-container:hover .link-button{
+    -fx-text-fill: white;
+
+
+}
+
+.search-bar{
+
+
+    -fx-border-width:0;
+
+    -fx-background-color:#313062;
+    -fx-background-radius: 20;
+    /*-fx-text-fill: black;*/
+    /*-fx-border-radius: 20;*/
+
+}
+.search-bar .mfx-prompt-text{
+
+
+    -mfx-color:white;
+}
+
+
+.Panes{
+    -fx-background-radius: 0 0 15 0;
+    -fx-max-width: 1188;
+    -fx-min-width: 1188;
+    -fx-max-height: 678;
+    -fx-min-height: 678;
+    -fx-background-color: -fx-secondColor;
+}
+.mfx-scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: -fx-thirdColor;
+}
+
+.mfx-scroll-pane{
+    -fx-background-color: transparent;
+}
+
+.filter-pane{
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+}
+.filter-pane .close-button{
+    -fx-background-color: transparent;
+}

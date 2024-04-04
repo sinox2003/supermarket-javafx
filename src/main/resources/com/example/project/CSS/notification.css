@@ -1,0 +1,61 @@
+
+/*///////////////////////////////////////   notifications buttons  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+.mfx-button {
+    -fx-font-family: 'Visby Round CF Medium';
+    /*-fx-text-fill: -mfx-text-he;*/
+    -fx-background-color: white;
+}
+
+.mfx-button .mfx-ripple-generator {
+    -mfx-ripple-radius: 40;
+    -mfx-auto-clip: true;
+}
+
+.mfx-button .text {
+    -fx-font-smoothing-type: lcd;
+}
+.outline-button {
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+    -fx-background-color: white;
+    -fx-border-color: -mfx-purple;
+    -fx-border-radius: 3;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: -mfx-purple;
+}
+
+
+.outline-button:hover,
+.outline-button:focused ,.outline-button:hover .mfx-font-icon,
+.outline-button:focused .mfx-font-icon {
+    -fx-background-color: -mfx-purple;
+    -fx-text-fill: white;
+    -mfx-color:white;
+
+
+}
+
+#pane{
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-border-width: 2;
+    -fx-border-color: #c5c5c5;
+    -fx-background-color: white;
+}
+.MFXScrollPane{
+    -fx-border-width: 0 2 1 2;
+    -fx-border-color: #c5c5c5;
+}
+#topBar{
+    -fx-background-radius: 7 7 0 0;
+    -fx-border-radius: 7 7 0 0;
+
+    -fx-border-width: 2 2 1 2;
+    -fx-border-color: #c5c5c5;
+    -fx-background-color: white;
+}
+.bottom-label{
+    -fx-font-family: roboto;
+    -fx-font-size: 12px;
+}
