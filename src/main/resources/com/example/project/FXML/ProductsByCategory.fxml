@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import io.github.palexdev.materialfx.font.MFXFontIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane fx:id="products_pane" styleClass="Panes" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.ProductsByCategory">
+   <children>
+      <MFXTableView fx:id="ProduitsTable" layoutX="40.0" layoutY="21.0" maxWidth="1109.0" minWidth="1067.0" prefHeight="553.0" prefWidth="1109.0" />
+      <Line endX="1040.0" layoutX="148.50001525878906" layoutY="615.0" startX="-148.00001525878906" stroke="#302f4e" />
+      <MFXButton fx:id="refreshproduits_btn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" defaultButton="true" layoutX="569.5" layoutY="624.0" onAction="#initializeProduits" prefHeight="38.0" prefWidth="45.0" rippleAnimateBackground="false" rippleRadius="0.0" text=" ">
+         <styleClass>
+            <String fx:value="mfx-button" />
+            <String fx:value="add_buttons" />
+         </styleClass>
+         <graphic>
+            <MFXFontIcon fx:id="refresh_icon" description="mfx-sync-light" size="25.0">
+               <color>
+                  <Color red="0.8947368264198303" green="0.8947368264198303" blue="0.8947368264198303" />
+               </color>
+            </MFXFontIcon>
+         </graphic>
+      </MFXButton>
+      <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="504.5" layoutY="622.0" onAction="#addProduct" prefHeight="38.0" prefWidth="45.0" rippleAnimateBackground="false" rippleRadius="0.0" text=" ">
+         <styleClass>
+            <String fx:value="mfx-button" />
+            <String fx:value="add_buttons" />
+         </styleClass>
+         <graphic>
+            <MFXFontIcon description="mfx-plus" size="27.0">
+               <color>
+                  <Color red="0.8941176533699036" green="0.8941176533699036" blue="0.8941176533699036" />
+               </color>
+            </MFXFontIcon>
+         </graphic>
+      </MFXButton>
+      <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="627.5" layoutY="621.0" onAction="#openWarning" prefHeight="38.0" prefWidth="45.0" rippleAnimateBackground="false" rippleRadius="0.0" text=" ">
+         <styleClass>
+            <String fx:value="mfx-button" />
+            <String fx:value="add_buttons" />
+         </styleClass>
+         <graphic>
+            <MFXFontIcon description="mfx-delete" size="30.0">
+               <color>
+                  <Color red="0.8947368264198303" green="0.8947368264198303" blue="0.8947368264198303" />
+               </color>
+            </MFXFontIcon>
+         </graphic>
+      </MFXButton>
+      <Button cancelButton="true" layoutX="70.0" layoutY="633.0" mnemonicParsing="false" onAction="#goBack" prefHeight="21.0" prefWidth="30.0" styleClass="goBackArrow" />
+   </children>
+   <stylesheets>
+      <URL value="@../CSS/adminPage.css" />
+      <URL value="@../CSS/categoriesAdmin.css" />
+   </stylesheets>
+</AnchorPane>

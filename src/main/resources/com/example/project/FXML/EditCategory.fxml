@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="addCategory_pane" prefHeight="662.0" prefWidth="918.0" styleClass="Panes" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.EditCategory">
+    <children>
+        <Label fx:id="label" alignment="CENTER" layoutX="202.0" layoutY="40.0" prefHeight="67.0" prefWidth="786.0" styleClass="titles" text="EDIT CATEGORY" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="40.0" />
+            </font>
+        </Label>
+        <VBox layoutX="433.0" layoutY="208.0" prefHeight="118.0" prefWidth="323.0" style="-fx-spacing: 10;">
+            <children>
+                <MFXTextField fx:id="categoryName_field" borderGap="1.0" floatMode="BORDER" floatingText="Category name" floatingTextGap="0.0" focusTraversable="false" prefHeight="59.0" prefWidth="325.0" styleClass="mfx-text-field">
+                    <padding>
+                        <Insets bottom="-8.0" />
+                    </padding></MFXTextField>
+                <Label fx:id="categoryName_rule" layoutX="10.0" layoutY="80.0" prefHeight="0.0" prefWidth="323.0" textFill="RED" wrapText="true" />
+            </children>
+        </VBox>
+        <JFXButton fx:id="valider_btn" defaultButton="true" layoutX="430.0" layoutY="332.0" onAction="#validerCategory" prefHeight="56.0" prefWidth="316.0" text="EDIT" textFill="#d3d3d3">
+            <styleClass>
+                <String fx:value="mfx-button" />
+                <String fx:value="refresh_button" />
+            </styleClass>
+        </JFXButton>
+        <Button cancelButton="true" layoutX="68.0" layoutY="57.0" mnemonicParsing="false" onAction="#goBack" prefHeight="33.0" prefWidth="42.0" styleClass="goBackArrow" />
+    </children>
+    <stylesheets>
+        <URL value="@../CSS/adminPage.css" />
+        <URL value="@../CSS/categoriesAdmin.css" />
+    </stylesheets>
+</Pane>

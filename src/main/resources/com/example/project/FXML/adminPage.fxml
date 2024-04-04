@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.font.MFXFontIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="718.0" prefWidth="1258.0" stylesheets="@../CSS/adminPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.AdminPage">
+    <children>
+        <HBox alignment="CENTER_RIGHT" blendMode="SCREEN" cache="true" cacheHint="SCALE" layoutX="1159.0" prefHeight="36.0" prefWidth="98.0" spacing="1.0" styleClass="top-bar">
+            <children>
+                <Button cancelButton="true" focusTraversable="false" maxWidth="54.0" minWidth="26.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="26.0" style="-fx-background-color: transparent;" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <graphic>
+                        <Circle fill="#29c83f" radius="7.0" stroke="#29c83f" strokeType="INSIDE" />
+                    </graphic>
+                </Button>
+                <Button cancelButton="true" focusTraversable="false" maxWidth="54.0" minWidth="26.0" mnemonicParsing="false" onAction="#minimize_window" prefHeight="31.0" prefWidth="26.0" styleClass="top-bar-buttons" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <graphic>
+                        <Circle fill="#f7a71e" radius="7.0" stroke="#f7a71e" strokeType="INSIDE" />
+                    </graphic>
+                </Button>
+                <Button fx:id="close_button1" cancelButton="true" focusTraversable="false" maxWidth="54.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="31.0" prefWidth="26.0" styleClass="top-bar-buttons" textFill="WHITE">
+                    <font>
+                        <Font />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <graphic>
+                        <Circle fill="#f45b4d" radius="7.0" stroke="#f45b4d" strokeType="INSIDE" />
+                    </graphic>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Button>
+            </children>
+            <cursor>
+                <Cursor fx:constant="OPEN_HAND" />
+            </cursor>
+            <padding>
+                <Insets right="15.0" top="4.0" />
+            </padding>
+        </HBox>
+      <StackPane fx:id="main_pane" layoutX="70.0" layoutY="40.0" prefHeight="678.0" prefWidth="1188.0" styleClass="Panes" />
+      <AnchorPane fx:id="sideBar" prefHeight="718.0" prefWidth="238.0">
+         <children>
+            <VBox fx:id="sideBar_vbox" alignment="CENTER" layoutX="6.0" layoutY="204.0" maxWidth="1.7976931348623157E308" prefHeight="302.0" prefWidth="226.0" spacing="15.0">
+               <children>
+                  <ToggleButton fx:id="home" alignment="CENTER_LEFT" graphicTextGap="0.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Home">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sidebar_buttons" />
+                     </toggleGroup>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="25px" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" styleClass="awesome-icon">
+                           <font>
+                              <Font name="System Italic" size="41.0" />
+                           </font>
+                        </FontAwesomeIcon>
+                     </graphic>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                  </ToggleButton>
+                  <ToggleButton fx:id="categories" alignment="CENTER_LEFT" graphicTextGap="0.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Caterories" toggleGroup="$sidebar_buttons">
+                     <graphic>
+                        <MFXFontIcon description="mfx-dashboard" size="25.0" styleClass="mfx-font-icon">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </MFXFontIcon>
+                     </graphic>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                  </ToggleButton>
+                  <ToggleButton fx:id="users" alignment="BASELINE_LEFT" graphicTextGap="0.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Users" toggleGroup="$sidebar_buttons">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="25px" styleClass="awesome-icon">
+                           <font>
+                              <Font name="System Italic" size="41.0" />
+                           </font>
+                        </FontAwesomeIcon>
+                     </graphic>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                  </ToggleButton>
+                  <ToggleButton fx:id="products" alignment="BASELINE_LEFT" graphicTextGap="0.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Products" toggleGroup="$sidebar_buttons">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SHOPPING_CART" size="25px" styleClass="awesome-icon">
+                           <font>
+                              <Font name="System Italic" size="41.0" />
+                           </font>
+                        </FontAwesomeIcon>
+                     </graphic>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                  </ToggleButton>
+               </children>
+            </VBox>
+            <MFXButton fx:id="signout_Btn" alignment="BASELINE_LEFT" buttonType="RAISED" depthLevel="LEVEL5" graphicTextGap="0.0" layoutX="2.0" layoutY="642.0" onAction="#SignOut" prefHeight="56.0" prefWidth="210.0" rippleAnimateBackground="false" rippleAnimationSpeed="0.7" rippleBackgroundOpacity="1.0" rippleRadius="0.0" rippleRadiusMultiplier="10.0" text="Logout">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" rotate="180.0" size="25px" text="">
+                     <font>
+                        <Font name="System Italic" size="41.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+               <rippleColor>
+                  <LinearGradient endX="1.0" endY="0.4356060479626511" startY="0.09090907645948006">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.06300000101327896" green="0.8999999761581421" blue="0.7757245898246765" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.06300000101327896" green="0.8999999761581421" blue="0.7757245898246765" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.38665594327544883">
+                           <color>
+                              <Color red="0.02759999968111515" green="0.5496766567230225" blue="0.9200000166893005" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.7316712076945799">
+                           <color>
+                              <Color red="0.2949707508087158" green="0.37388303875923157" blue="0.821052610874176" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6493372917175293" green="0.07840000092983246" blue="0.9800000190734863" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </rippleColor>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+            </MFXButton>
+            <ToggleButton fx:id="sidebar_btn" focusTraversable="false" layoutX="184.0" layoutY="22.0" mnemonicParsing="false" onAction="#sidebar_btn">
+               <graphic>
+                  <MFXFontIcon description="mfx-bars" size="26.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </MFXFontIcon>
+               </graphic>
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggle" />
+               </toggleGroup>
+            </ToggleButton>
+            <Pane fx:id="notification_pane" layoutX="14.0" layoutY="15.0" prefHeight="48.0" prefWidth="56.0">
+               <children>
+                  <Button cancelButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#show_notifications" pickOnBounds="false" prefHeight="48.0" prefWidth="56.0" style="-fx-background-color: transparent;" textFill="#fffdfd">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <MFXFontIcon description="mfx-bell-alt" size="34.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </MFXFontIcon>
+                     </graphic>
+                  </Button>
+                  <Circle fx:id="notification_nbr" fill="#810ee3" layoutX="35.0" layoutY="18.0" radius="4.0" stroke="#810ee3" strokeType="INSIDE" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="Panes" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.AddProduct">
+   <stylesheets>
+      <URL value="@../CSS/adminPage.css" />
+      <URL value="@../CSS/categoriesAdmin.css" />
+   </stylesheets>
+   <Label fx:id="label" alignment="TOP_CENTER" layoutX="358.0" prefHeight="46.0" prefWidth="471.0" styleClass="titles" text="Add Product" textFill="WHITE">
+      <font>
+         <Font name="Arial" size="40.0" />
+      </font>
+   </Label>
+   <VBox alignment="TOP_CENTER" layoutX="433.0" layoutY="63.0" prefHeight="523.0" prefWidth="323.0" style="-fx-spacing: 3;">
+      <MFXTextField fx:id="designation_field" borderGap="1.0" floatMode="BORDER" floatingText="Name" floatingTextGap="0.0" focusTraversable="false" prefHeight="53.0" prefWidth="349.0">
+         <padding>
+            <Insets bottom="-8.0" />
+         </padding>
+      </MFXTextField>
+      <Label fx:id="designation_rule" prefHeight="18.0" prefWidth="333.0" textFill="RED">
+         <VBox.margin>
+            <Insets bottom="11.0" />
+         </VBox.margin>
+      </Label>
+      <MFXTextField fx:id="quantite_field" borderGap="1.0" floatMode="BORDER" floatingText="Quantity" floatingTextGap="0.0" focusTraversable="false" layoutX="10.0" layoutY="38.0" prefHeight="53.0" prefWidth="338.0">
+         <padding>
+            <Insets bottom="-8.0" />
+         </padding>
+      </MFXTextField>
+      <Label fx:id="quantite_rule" layoutX="10.0" layoutY="80.0" prefHeight="18.0" prefWidth="338.0" textFill="RED">
+         <VBox.margin>
+            <Insets bottom="11.0" />
+         </VBox.margin>
+      </Label>
+      <MFXDatePicker fx:id="date_field" allowEdit="false" borderGap="1.0" floatMode="BORDER" floatingText="Arrival date" focusTraversable="false" prefHeight="57.0" prefWidth="335.0">
+         <font>
+            <Font name="Roboto Bold" size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="-8.0" />
+         </padding>
+      </MFXDatePicker>
+      <Label fx:id="date_rule" layoutX="10.0" layoutY="246.0" prefHeight="18.0" prefWidth="339.0" textFill="RED">
+         <VBox.margin>
+            <Insets bottom="11.0" />
+         </VBox.margin>
+      </Label>
+      <MFXDatePicker fx:id="peremption_field" allowEdit="false" borderGap="1.0" floatMode="BORDER" floatingText="Expiration date" focusTraversable="false" layoutX="10.0" layoutY="310.0" prefHeight="58.0" prefWidth="339.0">
+         <font>
+            <Font name="Roboto Bold" size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="-8.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="32.0" />
+         </VBox.margin>
+      </MFXDatePicker>
+      <MFXTextField fx:id="prix_field" borderGap="1.0" floatMode="BORDER" floatingText="Price" floatingTextGap="0.0" focusTraversable="false" prefHeight="54.0" prefWidth="344.0">
+         <padding>
+            <Insets bottom="-8.0" />
+         </padding>
+      </MFXTextField>
+      <Label fx:id="prix_rule" layoutX="10.0" layoutY="342.0" prefHeight="18.0" prefWidth="350.0" textFill="RED">
+         <VBox.margin>
+            <Insets bottom="11.0" />
+         </VBox.margin>
+      </Label>
+      <MFXTextField fx:id="selling_price_field" borderGap="1.0" floatMode="BORDER" floatingText="Selling price" floatingTextGap="0.0" focusTraversable="false" layoutX="10.0" layoutY="393.0" prefHeight="54.0" prefWidth="344.0">
+         <padding>
+            <Insets bottom="-8.0" />
+         </padding>
+      </MFXTextField>
+      <Label fx:id="selling_price_rule" layoutX="10.0" layoutY="457.0" prefHeight="18.0" prefWidth="350.0" textFill="RED">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+   </VBox>
+   <JFXButton buttonType="RAISED" defaultButton="true" focusTraversable="false" layoutX="436.0" layoutY="608.0" onAction="#ValiderProduit" prefHeight="56.0" prefWidth="316.0" ripplerFill="#001545" text="Add" textFill="#d3d3d3">
+      <styleClass>
+         <String fx:value="mfx-button" />
+         <String fx:value="refresh_button" />
+      </styleClass>
+   </JFXButton>
+   <Button cancelButton="true" layoutX="87.0" layoutY="9.0" mnemonicParsing="false" onAction="#cancelProduct" prefHeight="28.0" prefWidth="35.0" styleClass="goBackArrow" />
+</AnchorPane>
