@@ -3,9 +3,7 @@ package com.example.project;
 import Backend.Categorie.CategorieDaoImpl;
 import Backend.Historique.Historique;
 import Backend.Historique.HistoriqueDaoImpl;
-import io.github.palexdev.materialfx.controls.MFXFilterPane;
 import io.github.palexdev.materialfx.controls.MFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,8 +11,12 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
@@ -31,15 +33,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class HomeAdmin implements Initializable {
-
+public class ActivitiesAdmin implements Initializable {
     @FXML
     private FlowPane actions_pane;
     @FXML
-    private MFXTextField search_bar;
+    private TextField search_bar;
 
-    @FXML
-    Pane parent_filterPane;
+
     HistoriqueDaoImpl historiqueDao=new HistoriqueDaoImpl();
     CategorieDaoImpl categorieDao=new CategorieDaoImpl();
     List<Historique> historyList=new ArrayList<>();
@@ -48,25 +48,25 @@ public class HomeAdmin implements Initializable {
     public static Stage filter_stage;
 
 
-    public static HomeAdmin instance;
+        public static ActivitiesAdmin instance;
 
-    public static HomeAdmin getInstance() {
+        public static ActivitiesAdmin getInstance() {
         return instance;
     }
 
-    public HomeAdmin(){
-        instance=this;
-    }
+        public ActivitiesAdmin(){
+            instance=this;
+        }
 
 
-    public static void setInstance(HomeAdmin instance) {
-        HomeAdmin.instance = instance;
+    public static void setInstance(DashboardAdmin instance) {
+        DashboardAdmin.instance = instance;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-         refreshActionsTable();
+        refreshActionsTable();
 
 
         search_bar.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -76,6 +76,9 @@ public class HomeAdmin implements Initializable {
         });
 
         prepareFilter();
+
+
+
 
     }
 
@@ -135,7 +138,7 @@ public class HomeAdmin implements Initializable {
         action.setTooltip(new Tooltip(text));
 
         Label date = new Label(date1.toString());
-        date.setMinWidth(121);
+        date.setMinWidth(95);
 
         FlowPane flowPane=new FlowPane(id,category,product_name,quantity,price_unit,total,action,date);
         flowPane.setHgap(20);
@@ -162,12 +165,7 @@ public class HomeAdmin implements Initializable {
 
 
 
-    public void search(ActionEvent event) {
-        MFXTextField search=(MFXTextField) event.getSource();
-        System.out.println(search.getText());
-        createTablee(historyList.stream().filter(historique -> historique.getDesignation().matches(search.getText())).collect(Collectors.toList()));
 
-    }
 
 
 
@@ -207,7 +205,6 @@ public class HomeAdmin implements Initializable {
         filter_stage.close();
         createTablee(historyList);
     }
-
 
 
 

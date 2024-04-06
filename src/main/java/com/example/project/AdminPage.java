@@ -54,7 +54,7 @@ public class AdminPage implements Initializable {
     @FXML
     MFXButton signout_Btn;
     @FXML
-    ToggleButton home,actions,users,products,categories;
+    ToggleButton dashboard,activities,users,products,categories;
     @FXML
     Circle notification_nbr;
     @FXML
@@ -96,8 +96,8 @@ public class AdminPage implements Initializable {
             Main.primaryStage.setY(event.getScreenY()-y );
 
         });
-        sidebar_btns= new ToggleButton[]{home, users, products,categories};
-        home.fire();
+        sidebar_btns= new ToggleButton[]{dashboard,activities, users, products,categories};
+        dashboard.fire();
         change_scene();
 
 
@@ -179,9 +179,9 @@ public class AdminPage implements Initializable {
     public void SignOut(ActionEvent event) throws IOException {
 
         UserGoOffline();
-        Parent home = FXMLLoader.load(getClass().getResource("/com/example/project/FXML/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/project/FXML/login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(home);
+        Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
@@ -203,15 +203,17 @@ public class AdminPage implements Initializable {
             Platform.runLater(()->{
             for(ToggleButton toggleButton:sidebar_btns){
                 toggleButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-                toggleButton.setPrefWidth(50);
+                toggleButton.setPrefWidth(55);
                 toggleButton.setAlignment(Pos.CENTER);
                 toggleButton.setPadding(new Insets(0));
+
             }
             notification_pane.setTranslateX(160);
             notification_pane.setTranslateY(60);
             signout_Btn.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             signout_Btn.setAlignment(Pos.CENTER_RIGHT);
             sideBar_vbox.setAlignment(Pos.CENTER_RIGHT);
+            sideBar_vbox.setPadding(new Insets(0,2,0,0));
             });
         }else {
             tt.setDuration(Duration.millis(150));

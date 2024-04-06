@@ -13,10 +13,10 @@
     -fx-padding: 0 0 0 0;
     -fx-min-height: 45;
 
-    -fx-min-width: 1155;
+    -fx-min-width: 1135;
 }
 .row-container:hover{
--fx-background-color: #313062;
+    -fx-background-color: #313062;
 
 
 }
@@ -53,18 +53,13 @@
 
 
     -fx-border-width:0;
+    -fx-text-fill: white;
+    -fx-background-color:-fx-mainColor;
+    -fx-background-radius: 27;
 
-    -fx-background-color:#313062;
-    -fx-background-radius: 20;
-    /*-fx-text-fill: black;*/
-    /*-fx-border-radius: 20;*/
 
 }
-.search-bar .mfx-prompt-text{
 
-
-    -mfx-color:white;
-}
 
 
 .Panes{
@@ -90,4 +85,9 @@
 }
 .filter-pane .close-button{
     -fx-background-color: transparent;
+}
+.background-color{
+    -fx-background-color: -fx-mainColor;
+    -fx-background-radius: 15;
+
 }

@@ -214,6 +214,7 @@ public class ProductsByCategory implements Initializable {
     public void deleteProduct(Produit produit) {
         produitsDao.delete(produit.getId());
         hdao.delete(produit.getId());
+        AdminPage.getInstance().change_scene();
         initializeProduits();
     }
     public void removeProduct(Produit produit) {
@@ -222,6 +223,7 @@ public class ProductsByCategory implements Initializable {
                 produit.getSelling_price(), Historique.HistoriqueAction.STOCK_OUT, LocalDate.now());
 
         hdao.add(h);
+        AdminPage.getInstance().change_scene();
         initializeProduits();
     }
 

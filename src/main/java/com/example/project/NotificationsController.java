@@ -132,7 +132,9 @@ public class NotificationsController implements Initializable {
             if(ProductsAdmin.getInstance()!=null) {
                 ProductsAdmin.getInstance().initialize_AllProducts();
             }
-            HomeAdmin.getInstance().refreshActionsTable();
+            if(ActivitiesAdmin.getInstance()!=null) {
+                ActivitiesAdmin.getInstance().refreshActionsTable();
+            }
 
 
         });

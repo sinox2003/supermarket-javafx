@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 
-<Pane fx:id="pane" prefHeight="296.0" prefWidth="736.0" styleClass="filter-pane" stylesheets="@../CSS/homeAdmin.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.FilterPane">
+<Pane fx:id="pane" prefHeight="296.0" prefWidth="736.0" styleClass="filter-pane" stylesheets="@../CSS/activitiesAdmin.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.FilterPane">
    <children>
       <MFXFilterPane fx:id="filterPane" layoutY="26.0" onFilter="#setOnFilter" onReset="#setOnReset" prefHeight="270.0" prefWidth="735.0" />
       <Button layoutX="698.0" layoutY="2.0" mnemonicParsing="false" onAction="#close_filterPane" styleClass="close-button">

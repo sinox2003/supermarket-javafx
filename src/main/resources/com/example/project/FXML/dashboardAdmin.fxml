@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="products_pane" styleClass="Panes" stylesheets="@../CSS/dashboardAdmin.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.DashboardAdmin">
+   <children>
+      <Pane layoutX="613.0" layoutY="14.0" prefHeight="311.0" prefWidth="561.0" styleClass="chart-pane">
+         <children>
+            <BarChart fx:id="barchart1" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="15.0" layoutY="28.0" legendSide="TOP" legendVisible="false" prefHeight="150.0" prefWidth="557.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" tickLabelsVisible="false" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="incomeYaxis" autoRanging="false" side="LEFT" />
+               </yAxis>
+            </BarChart>
+            <BarChart fx:id="barchart2" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="15.0" layoutY="144.0" legendSide="TOP" legendVisible="false" prefHeight="150.0" prefWidth="557.0" rotate="180.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" tickLabelsVisible="false" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="outcomeYaxis" autoRanging="false" side="LEFT" />
+               </yAxis>
+               <rotationAxis>
+                  <Point3D x="1.0" />
+               </rotationAxis>
+            </BarChart>
+            <Circle fill="#9c27b0" layoutX="474.0" layoutY="39.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label layoutX="485.0" layoutY="29.0" lineSpacing="3.0" prefHeight="20.0" prefWidth="80.0" text="Outcome" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="13.0" />
+               </font>
+            </Label>
+            <Circle fill="#4caf50" layoutX="389.0" layoutY="39.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label layoutX="400.0" layoutY="29.0" lineSpacing="3.0" prefHeight="20.0" prefWidth="61.0" text="Income" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="13.0" />
+               </font>
+            </Label>
+            <HBox layoutX="81.0" layoutY="279.0" prefHeight="15.0" prefWidth="483.0" spacing="18.0">
+               <children>
+                  <Label text="Jan" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Feb" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="10.0" text="Mar" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="70.0" layoutY="10.0" text="Apr" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="May" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="10.0" text="Jun" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="70.0" layoutY="10.0" text="Jul" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="10.0" text="Aug" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="Sep" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="10.0" text="Oct" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="70.0" layoutY="10.0" text="Nov" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="10.0" text="Dec" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label layoutX="21.0" layoutY="26.0" prefHeight="26.0" prefWidth="283.0" text="Monthly Gains and Losses" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="19.0" />
+               </font>
+            </Label>
+            <Line endX="346.0" fill="WHITE" layoutX="211.0" layoutY="98.0" startX="-138.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="1.0" strokeWidth="0.05" />
+            <Line endX="346.0" fill="WHITE" layoutX="211.0" layoutY="224.0" startX="-136.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="1.0" strokeWidth="0.05" />
+            <Label fx:id="maxBar2" layoutX="14.0" layoutY="217.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="9.0" />
+               </font>
+            </Label>
+            <Label fx:id="maxBar1" layoutX="14.0" layoutY="90.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

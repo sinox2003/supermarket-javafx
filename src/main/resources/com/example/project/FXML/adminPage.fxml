@@ -82,22 +82,34 @@
       <StackPane fx:id="main_pane" layoutX="70.0" layoutY="40.0" prefHeight="678.0" prefWidth="1188.0" styleClass="Panes" />
       <AnchorPane fx:id="sideBar" prefHeight="718.0" prefWidth="238.0">
          <children>
-            <VBox fx:id="sideBar_vbox" alignment="CENTER" layoutX="6.0" layoutY="204.0" maxWidth="1.7976931348623157E308" prefHeight="302.0" prefWidth="226.0" spacing="15.0">
+            <VBox fx:id="sideBar_vbox" alignment="CENTER" layoutX="6.0" layoutY="184.0" maxWidth="1.7976931348623157E308" prefHeight="350.0" prefWidth="226.0" spacing="15.0">
                <children>
-                  <ToggleButton fx:id="home" alignment="CENTER_LEFT" graphicTextGap="0.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Home">
+                  <ToggleButton fx:id="dashboard" alignment="CENTER_LEFT" graphicTextGap="0.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Dashboard">
                      <toggleGroup>
                         <ToggleGroup fx:id="sidebar_buttons" />
                      </toggleGroup>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
                      <graphic>
-                        <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="25px" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" styleClass="awesome-icon">
+                        <FontAwesomeIcon fill="WHITE" glyphName="PIE_CHART" size="25px" styleClass="awesome-icon">
                            <font>
                               <Font name="System Italic" size="41.0" />
                            </font>
                         </FontAwesomeIcon>
                      </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="activities" alignment="CENTER_LEFT" graphicTextGap="0.0" layoutX="18.0" layoutY="51.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Activities" toggleGroup="$sidebar_buttons">
                      <padding>
                         <Insets left="35.0" />
                      </padding>
+                     <graphic>
+                        <MFXFontIcon description="mfx-square-list" size="25.0" styleClass="mfx-font-icon">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </MFXFontIcon>
+                     </graphic>
                   </ToggleButton>
                   <ToggleButton fx:id="categories" alignment="CENTER_LEFT" graphicTextGap="0.0" onAction="#initializeLoader" prefHeight="56.0" prefWidth="210.0" styleClass="button" text="Caterories" toggleGroup="$sidebar_buttons">
                      <graphic>

@@ -2,7 +2,6 @@ package com.example.project;
 
 import Backend.Categorie.CategorieDaoImpl;
 import Backend.Historique.Historique;
-import Backend.Historique.HistoriqueDaoImpl;
 import io.github.palexdev.materialfx.controls.MFXFilterPane;
 import io.github.palexdev.materialfx.filter.DoubleFilter;
 import io.github.palexdev.materialfx.filter.EnumFilter;
@@ -67,8 +66,8 @@ public class FilterPane implements Initializable {
         });
 
         pane.setOnMouseDragged(event ->{
-            HomeAdmin.filter_stage.setX(event.getScreenX()-x);
-            HomeAdmin.filter_stage.setY(event.getScreenY()-y );
+            ActivitiesAdmin.filter_stage.setX(event.getScreenX()-x);
+            ActivitiesAdmin.filter_stage.setY(event.getScreenY()-y );
         });
 
 
@@ -80,11 +79,11 @@ public class FilterPane implements Initializable {
     public void setOnFilter(MouseEvent mouseEvent) {
         Predicate<Historique> filter = filterPane.filter();
         List<Historique> filteredData = historyList.stream().filter(filter).collect(Collectors.toList());
-        HomeAdmin.getInstance().createTablee(filteredData);
+        ActivitiesAdmin.getInstance().createTablee(filteredData);
     }
 
     public void setOnReset(MouseEvent mouseEvent) {
-        HomeAdmin.getInstance().createTablee(historyList);
+        ActivitiesAdmin.getInstance().createTablee(historyList);
     }
 
     public void close_filterPane(ActionEvent event) {

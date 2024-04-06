@@ -1,0 +1,44 @@
+@import "adminPage.css";
+
+
+
+
+.Panes{
+    -fx-background-radius: 0 0 15 0;
+    -fx-max-width: 1188;
+    -fx-min-width: 1188;
+    -fx-max-height: 678;
+    -fx-min-height: 678;
+    -fx-background-color: -fx-secondColor;
+}
+.chart-plot-background{
+    -fx-background-color: transparent;
+
+}
+.chart .axis{
+    /*-fx-indeterminate-bar-animation-time: 10;*/
+    -fx-opacity: 0;
+}
+
+
+#barchart1  .chart-bar {
+    -fx-bar-fill: #4CAF50; /* Change the fill color of bars */
+    -fx-background-radius: 10;
+
+}
+#barchart2  .chart-bar {
+    -fx-bar-fill: #9C27B0; /* Change the fill color of bars */
+    -fx-background-radius: 10;
+
+}
+
+.chart-pane{
+    -fx-background-color:-fx-mainColor ;
+    -fx-background-radius: 13;
+}
+
+.background-color{
+    -fx-background-color: -fx-mainColor;
+    -fx-background-radius: 15;
+
+}
