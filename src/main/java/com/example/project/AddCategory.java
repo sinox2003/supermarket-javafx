@@ -40,7 +40,7 @@ public class AddCategory  {
         if(categoryRules()){
             int id = (int)categorieDao.getAll().stream().count()+1;
 
-            Categorie categorie = new Categorie(id,categoryName_field.getText());
+            Categorie categorie = new Categorie(id,categoryName_field.getText().toUpperCase());
             categorieDao.add(categorie);
 
             categoryName_rule.setText("Category was added succesfuly ");

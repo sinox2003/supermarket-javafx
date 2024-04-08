@@ -16,11 +16,11 @@ public class CategorieDaoImpl extends AbstractDao implements ICategorieDao {
     public void add(Categorie obj) {
         PreparedStatement pst = null;
         ResultSet generatedKeys = null;
-        String sql = "INSERT INTO categorie  VALUES (?,?)";
+        String sql = "INSERT INTO categorie(nom)  VALUES (?)";
         try {
             pst = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            pst.setInt(1, obj.getId());
-            pst.setString(2, obj.getNom());
+//            pst.setInt(1, obj.getId());
+            pst.setString(1, obj.getNom());
             int affectedRows = pst.executeUpdate();
 
             if (affectedRows > 0) {
@@ -122,6 +122,7 @@ public class CategorieDaoImpl extends AbstractDao implements ICategorieDao {
                         rs.getInt("id"),
                         rs.getString("nom")));
             }
+            System.out.println("getall");
         } catch (SQLException e) {
             System.err.println("Erreur lors de la récupération de toutes les catégories");
             e.printStackTrace();

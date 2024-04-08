@@ -8,4 +8,6 @@ public interface IHistoriqueDao {
     public List<Historique> getAll();
     public void add(Historique h);
     public void delete(int id);
+
+    void deleteCategory(int categoryId);
 }

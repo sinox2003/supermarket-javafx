@@ -45,7 +45,7 @@ public class EditCategory  {
     }
 
     public void validerCategory()  {
-        String nom = categoryName_field.getText();
+        String nom = categoryName_field.getText().toUpperCase();
         int id=categorie.getId();
         if(categoryRules(nom)){
 

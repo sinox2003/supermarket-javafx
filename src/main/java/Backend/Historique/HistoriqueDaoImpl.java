@@ -144,7 +144,33 @@ public class HistoriqueDaoImpl extends AbstractDao implements IHistoriqueDao {
         }
     }
 
+    @Override
+    public void deleteCategory(int categoryId) {
+        PreparedStatement pst = null;
+        String sql = "DELETE FROM historique WHERE idCategorie = ?";
 
+        try {
+            pst = connection.prepareStatement(sql);
+            pst.setInt(1, categoryId);
+            int rowsDeleted = pst.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                System.out.println("Historique deleted successfully!");
+            } else {
+                System.out.println("Historique with category ID " + categoryId + " not found.");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (pst != null) {
+                    pst.close();
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 
 
 

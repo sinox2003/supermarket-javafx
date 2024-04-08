@@ -360,3 +360,21 @@
     -fx-background-color: -fx-labelColor;
 }
 
+/*//////////////////////////////// sort button \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+#sort  {
+
+    -fx-font-size:15px ;
+    -fx-font-weight: bold;
+    -fx-font-family:"Roboto";
+
+    -fx-border-width: 0 ;
+    -px-padding:0;
+    -fx-border-radius: 0;
+    -fx-text-fill: white;
+    -fx-background-color: -fx-mainColor;
+
+}
+#sort  .mfx-font-icon{
+    -mfx-color: white;
+
+}

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyComboBox?>
 <?import io.github.palexdev.materialfx.font.MFXFontIcon?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
@@ -13,7 +14,8 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="products_pane" styleClass="Panes" stylesheets="@../CSS/activitiesAdmin.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.ActivitiesAdmin">
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<AnchorPane  styleClass="Panes" stylesheets="@../CSS/activitiesAdmin.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.ActivitiesAdmin">
    <children>
       <MFXScrollPane hbarPolicy="NEVER" layoutX="19.0" layoutY="178.0" minHeight="211.0" minWidth="914.0" prefHeight="483.0" prefWidth="1157.0" style="-fx-background-color: transparent;" thumbColor="#4441e1" thumbHoverColor="#7a0ed9" trackColor="#d5e0ff">
          <content>
@@ -73,7 +75,7 @@
 
          <styleClass>
             <String fx:value="search-bar" />
-            <String fx:value="mfx-prompt-text" />
+
          </styleClass>
          <padding>
             <Insets left="30.0" right="43.0" />
@@ -83,9 +85,9 @@
          </font>
       </TextField>
 
-      <Button graphicTextGap="10.0" layoutX="888.0" layoutY="31.0" mnemonicParsing="false" onAction="#filter" prefHeight="45.0" prefWidth="104.0" style="-fx-background-color: transparent;" text="Filter" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="844.0" layoutY="41.0" mnemonicParsing="false" onAction="#filter" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: transparent;" styleClass="filter-button" text="Filter" textFill="WHITE">
          <graphic>
-            <MFXFontIcon description="mfx-filter-alt" size="25.0">
+            <MFXFontIcon description="mfx-filter-alt" size="22.0">
                <color>
                   <Color red="1.0" green="1.0" blue="1.0" />
                </color>
@@ -98,9 +100,9 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button graphicTextGap="10.0" layoutX="1000.0" layoutY="37.0" mnemonicParsing="false" onAction="#clearFilter" style="-fx-background-color: transparent;" text="Clear" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="942.0" layoutY="41.0" mnemonicParsing="false" onAction="#clearFilter" style="-fx-background-color: transparent;" styleClass="filter-button" text="Clear" textFill="WHITE">
          <graphic>
-            <MFXFontIcon description="mfx-filter-alt-clear" size="25.0">
+            <MFXFontIcon description="mfx-filter-alt-clear" size="22.0">
                <color>
                   <Color red="1.0" green="1.0" blue="1.0" />
                </color>
@@ -114,6 +116,15 @@
          </font>
       </Button>
       <MFXFontIcon description="mfx-search" layoutX="738.0" layoutY="65.0" size="23.0">
+         <color>
+            <Color red="1.0" green="1.0" blue="1.0" />
+         </color>
+      </MFXFontIcon>
+      <MFXComboBox fx:id="sort" borderGap="0.0" onAction="#sortActionsTable" floatMode="DISABLED" floatingTextGap="0.0" graphicTextGap="0.0"  measureUnitGap="0.0"  prefColumnCount="4" prefHeight="40.0" prefWidth="100.0" text="Sort"  layoutX="1075.0" layoutY="33.0"   promptText="Sort"  >
+
+
+      </MFXComboBox>
+      <MFXFontIcon description="mfx-filter" size="25.0" layoutX="1044.0" layoutY="64" >
          <color>
             <Color red="1.0" green="1.0" blue="1.0" />
          </color>

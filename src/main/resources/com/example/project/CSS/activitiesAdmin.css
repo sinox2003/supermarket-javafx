@@ -91,3 +91,28 @@
     -fx-background-radius: 15;
 
 }
+.filter-button{
+    -fx-font-family: "Roboto ";
+    -fx-font-size: 16;
+    -fx-padding: 0;
+}
+
+
+/*/////////////////////////  sort combobox \\\\\\\\\\\\\\\\\\\\\\\\\*/
+#sort  {
+
+    -fx-font-size:15px ;
+    -fx-font-weight: bold;
+    -fx-font-family:"Roboto";
+
+    -fx-border-width: 0 ;
+    -px-padding:0;
+    -fx-border-radius: 0;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+
+}
+#sort  .mfx-font-icon{
+    -mfx-color: white;
+
+}

@@ -2,19 +2,21 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
-<?import java.net.URL?>
+<?import io.github.palexdev.materialfx.font.MFXFontIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-
+<?import java.net.URL?>
 <AnchorPane fx:id="anchorPane" prefHeight="678.0" prefWidth="1188.0" styleClass="Panes" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.CategoriesAdmin">
    <children>
-      <MFXScrollPane fx:id="scroll_pane_categories" hbarPolicy="NEVER" layoutX="37.0" layoutY="38.0" minHeight="602.0" minWidth="914.0" prefHeight="617.0" prefWidth="1151.0" style="-fx-background-color: transparent;" thumbColor="#4441e1" thumbHoverColor="#7a0ed9" trackColor="#d5e0ff">
+      <MFXScrollPane fx:id="scroll_pane_categories" hbarPolicy="NEVER" layoutX="37.0" layoutY="56.0" minHeight="600.0" minWidth="914.0" prefHeight="600.0" prefWidth="1151.0" style="-fx-background-color: transparent;" thumbColor="#4441e1" thumbHoverColor="#7a0ed9" trackColor="#d5e0ff">
          <content>
-            <FlowPane fx:id="DBCategories_container" hgap="40.0" prefHeight="650.0" prefWidth="1151.0" rowValignment="TOP" vgap="40.0">
+            <FlowPane fx:id="DBCategories_container" hgap="40.0" prefHeight="233.0" prefWidth="1151.0" rowValignment="TOP" vgap="40.0">
                <children>
                   <JFXButton fx:id="addCategory_btn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="10.0" onAction="#addCategory" prefHeight="334.0" prefWidth="246.0" ripplerFill="WHITE" styleClass="pane" text=" " textFill="WHITE">
                      <graphic>
@@ -38,6 +40,17 @@
             </FlowPane>
          </content>
       </MFXScrollPane>
+      <MFXComboBox fx:id="sort" borderGap="0.0" floatMode="DISABLED" floatingTextGap="0.0" graphicTextGap="0.0" layoutX="38.0" measureUnitGap="0.0" onAction="#refreshCategory" prefColumnCount="2" prefHeight="40.0" prefWidth="117.0" text="Sort">
+         <padding>
+            <Insets left="36.0" />
+         </padding>
+
+      </MFXComboBox>
+      <MFXFontIcon description="mfx-filter" size="25.0" layoutX="43.0" layoutY="31" >
+         <color>
+            <Color red="1.0" green="1.0" blue="1.0" />
+         </color>
+      </MFXFontIcon>
    </children>
    <stylesheets>
       <URL value="@../CSS/categoriesAdmin.css" />

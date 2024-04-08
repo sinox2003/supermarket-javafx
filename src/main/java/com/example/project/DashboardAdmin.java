@@ -3,6 +3,10 @@ package com.example.project;
 import Backend.Categorie.CategorieDaoImpl;
 import Backend.Historique.Historique;
 import Backend.Historique.HistoriqueDaoImpl;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
@@ -10,6 +14,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -56,11 +61,17 @@ public class DashboardAdmin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-         refreshCharts();
 
 
+//        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent actionEvent) {
+//                refreshCharts();
+//            }
+//        }));
+//        timeline.play();
 
-
+        refreshCharts();
 
 
 

@@ -79,6 +79,7 @@ public class FilterPane implements Initializable {
     public void setOnFilter(MouseEvent mouseEvent) {
         Predicate<Historique> filter = filterPane.filter();
         List<Historique> filteredData = historyList.stream().filter(filter).collect(Collectors.toList());
+        ActivitiesAdmin.getInstance().historyList=filteredData;
         ActivitiesAdmin.getInstance().createTablee(filteredData);
     }
 

@@ -3,7 +3,9 @@ package com.example.project;
 import Backend.Categorie.CategorieDaoImpl;
 import Backend.Historique.Historique;
 import Backend.Historique.HistoriqueDaoImpl;
-import io.github.palexdev.materialfx.controls.MFXTextField;
+import io.github.palexdev.materialfx.controls.MFXComboBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,15 +13,11 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -28,9 +26,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ActivitiesAdmin implements Initializable {
@@ -38,13 +34,15 @@ public class ActivitiesAdmin implements Initializable {
     private FlowPane actions_pane;
     @FXML
     private TextField search_bar;
-
+    @FXML
+    private MFXComboBox<String> sort;
 
     HistoriqueDaoImpl historiqueDao=new HistoriqueDaoImpl();
     CategorieDaoImpl categorieDao=new CategorieDaoImpl();
-    List<Historique> historyList=new ArrayList<>();
+    List<Historique> historyList=historiqueDao.getAll();;
     private Parent root;
     private Scene filterScene;
+    private boolean filterActive=false;
     public static Stage filter_stage;
 
 
@@ -75,19 +73,30 @@ public class ActivitiesAdmin implements Initializable {
 
         });
 
-        prepareFilter();
-
-
-
+        ObservableList<String> sortList = FXCollections.observableList(
+                new ArrayList<>(Arrays.asList( "OldDate", "NewDate","Oldest", "Newest"))
+        );
+//
+        sort.setItems(sortList);
 
     }
 
     public void refreshActionsTable(){
-        historyList=historiqueDao.getAll();
+
         createTablee(historyList);
     }
 
+    public void sortActionsTable(){
 
+        switch (sort.getSelectedItem()){
+            case "Oldest":  historyList=historyList.stream().sorted(Comparator.comparing(Historique::getDate)).collect(Collectors.toList());break;
+            case "Newest" : historyList=historyList.stream().sorted(Comparator.comparing(Historique::getDate).reversed()).collect(Collectors.toList());break;
+            case "OldAction" : historyList=historyList.stream().sorted(Comparator.comparing(Historique::getId)).collect(Collectors.toList());break;
+            case "NewAction" : historyList=historyList.stream().sorted(Comparator.comparing(Historique::getId).reversed()).collect(Collectors.toList());
+        }
+
+        createTablee(historyList);
+    }
 
 
     public FlowPane create_row(int id1, int category1, String name1, int quantity1, double price1, Historique.HistoriqueAction type1, LocalDate date1) {
@@ -171,7 +180,7 @@ public class ActivitiesAdmin implements Initializable {
 
 
 
-    public void prepareFilter(){
+    public  void prepareFilter(){
         System.out.println("bhbhj");
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/project/FXML/FilterPane.fxml"));
@@ -183,7 +192,7 @@ public class ActivitiesAdmin implements Initializable {
             filter_stage.initStyle(StageStyle.TRANSPARENT);
             filterScene.setFill(Color.TRANSPARENT);
             filter_stage.setScene(filterScene);
-
+            filterActive=true;
 
 
         } catch (IOException e) {
@@ -193,9 +202,11 @@ public class ActivitiesAdmin implements Initializable {
     }
 
     public void filter(){
+        if (!filterActive){
+            prepareFilter();
+        }
         if(filter_stage.isShowing()){
             filter_stage.toFront();
-
         }else {
             filter_stage.show();
         }

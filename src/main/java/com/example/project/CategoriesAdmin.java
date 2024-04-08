@@ -3,6 +3,7 @@ package com.example.project;
 
 import Backend.Categorie.Categorie;
 import Backend.Categorie.CategorieDaoImpl;
+import Backend.Historique.HistoriqueDaoImpl;
 import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.materialfx.dialogs.MFXGenericDialog;
 import io.github.palexdev.materialfx.dialogs.MFXGenericDialogBuilder;
@@ -10,6 +11,8 @@ import io.github.palexdev.materialfx.dialogs.MFXStageDialog;
 import io.github.palexdev.materialfx.enums.ScrimPriority;
 import io.github.palexdev.materialfx.font.MFXFontIcon;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,9 +29,8 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CategoriesAdmin implements Initializable {
 
@@ -52,13 +54,15 @@ public class CategoriesAdmin implements Initializable {
     private FlowPane DBCategories_container;
     @FXML
     public AnchorPane anchorPane;
+    @FXML
+    private MFXComboBox<String> sort;
 
 
-    public ActionEvent Event;
 
     String buttonText;
 
     private CategorieDaoImpl categorieDao = new CategorieDaoImpl();
+    private HistoriqueDaoImpl historiqueDao = new HistoriqueDaoImpl();
 
     public int categorieNumber;
 
@@ -66,6 +70,7 @@ public class CategoriesAdmin implements Initializable {
 
     @FXML
     MFXScrollPane  scroll_pane_categories;
+    List<Categorie> categorieList=categorieDao.getAll();
 
     public  static CategoriesAdmin instance;
 
@@ -141,6 +146,7 @@ public class CategoriesAdmin implements Initializable {
         dialogContent.getStyleClass().add("mfx-warn-dialog");
         dialogContent.addActions(
                 Map.entry(new MFXButton("Confirm"), Event -> {
+                    historiqueDao.deleteCategory(categorieNumber);
                     categorieDao.delete(categorieNumber);
                     refreshCategory();
                     dialog.close();
@@ -160,10 +166,31 @@ public class CategoriesAdmin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        refreshCategory();
+        ObservableList<String> sortList = FXCollections.observableList(
+                new ArrayList<>(Arrays.asList( "Oldest", "Newest","A-Z", "Z-A"))
+        );
+//
+        sort.setItems(sortList);
+//
+
+
+        refresh();
 
 
     }
+
+    public List<Categorie> sort(){
+
+
+        switch (sort.getSelectedItem()){
+            case "Oldest":  return categorieList;
+            case "Newest" : return categorieList.stream().sorted(Comparator.comparing(Categorie::getId).reversed()).collect(Collectors.toList());
+            case "A-Z" : return categorieList.stream().sorted(Comparator.comparing(Categorie::getNom)).collect(Collectors.toList());
+            case "Z-A" : return categorieList.stream().sorted(Comparator.comparing(Categorie::getNom).reversed()).collect(Collectors.toList());
+        }
+        return null;
+    }
+
     public void addCategory() throws IOException {
         AdminPage.getInstance().changePage("/com/example/project/FXML/addCategory.fxml");
 
@@ -173,9 +200,9 @@ public class CategoriesAdmin implements Initializable {
         anchorPane.getChildren().add(scroll_pane_categories);
         refreshCategory();
     }
-    public void initializeCategories() {
-        List<Categorie> categories = categorieDao.getAll();
-        int color_nbr = 0;
+    public void initializeCategories( List<Categorie> categories ) {
+
+        int i=0,color_nbr = 0;
         for (Categorie category : categories) {
 
 
@@ -238,9 +265,10 @@ public class CategoriesAdmin implements Initializable {
             });
 
             pane.getChildren().addAll(edit, delete, label, categoryButton);
-            color_nbr = category.getId() % 4;
+            color_nbr = i % 4;
             pane.setStyle(" -fx-background-color:" + colors[color_nbr]);
             DBCategories_container.getChildren().addLast(pane);
+            i++;
         }
         addCategory_btn.setStyle(" -fx-background-color:" + colors[(color_nbr+1)%4]);
     }
@@ -264,7 +292,16 @@ public class CategoriesAdmin implements Initializable {
     public void refreshCategory(){
 
         DBCategories_container.getChildren().clear();
-        initializeCategories();
+
+        initializeCategories(sort());
+        DBCategories_container.getChildren().addLast(addCategory_btn);
+
+    }
+    public void refresh(){
+
+        DBCategories_container.getChildren().clear();
+
+        initializeCategories(categorieList);
         DBCategories_container.getChildren().addLast(addCategory_btn);
 
     }
