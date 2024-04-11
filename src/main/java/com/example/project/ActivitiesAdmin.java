@@ -57,9 +57,7 @@ public class ActivitiesAdmin implements Initializable {
         }
 
 
-    public static void setInstance(DashboardAdmin instance) {
-        DashboardAdmin.instance = instance;
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
